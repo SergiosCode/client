@@ -6,14 +6,19 @@ import Input from "./Input";
 
 function Auth() {
   const classes = useStyles();
-  const isSignup = true;
   const [showPassword, setShowPassword] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
 
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
   const handleSubmit = () => {};
 
   const handleChange = () => {};
+
+  const switchMode = () => {
+    setIsSignup((prevIsSignup) => !prevIsSignup);
+    handleShowPassword(false);
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -39,7 +44,7 @@ function Auth() {
             <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
             <Input
               name="password"
-              label="password"
+              label="Password"
               handleChange={handleChange}
               type={showPassword ? "text" : "password"}
               handleShowPassword={handleShowPassword}
@@ -61,6 +66,13 @@ function Auth() {
             className={classes.submit}>
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Button onClick={switchMode}>
+                {isSignup ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
+              </Button>
+            </Grid>
+          </Grid>
         </form>
       </Paper>
     </Container>
