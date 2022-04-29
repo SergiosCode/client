@@ -7,19 +7,34 @@ import useStyles from "./styles";
 import { useHistory } from "react-router-dom";
 import Input from "./Input";
 import Icon from "./icon";
+import { signin, signup } from "../../actions/auth";
+
+const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" };
 
 function Auth() {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
 
-  const handleChange = () => {};
+    if (isSignup) {
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
@@ -28,7 +43,7 @@ function Auth() {
     try {
       dispatch({ type: "AUTH", data: { result, token } });
 
-      history.push("/")
+      history.push("/");
     } catch (err) {
       console.log(err);
     }
@@ -74,7 +89,7 @@ function Auth() {
             />
             {isSignup && (
               <Input
-                name="confirm Password"
+                name="confirmPassword"
                 label="Repeat Password"
                 handleChange={handleChange}
                 type="password"
