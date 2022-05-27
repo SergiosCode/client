@@ -45,31 +45,36 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
-    <Card className={classes.card}>
-      <CardMedia className={classes.media} src="img" image={post.selectedFile} title={post.title} />
+    <Card className={classes.card} raised elevation={6}>
+      <CardMedia className={classes.media} src="img" image={post.selectedFile} />
       <div className={classes.overlay}>
         <Typography variant="h6">{post.name}</Typography>
         <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
       </div>
       {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
-
-      <div className={classes.overlay2}>
-        <Button style={{ color: "white" }} size="small" onClick={() => setCurrentId(post._id)}>
-          <MoreHorizIcon fontSize="medium" />
-        </Button>
-      </div>
+        <div className={classes.overlay2}>
+          <Button
+            style={{ color: "white" }}
+            size="small"
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentId(post._id);
+            }}>
+            <MoreHorizIcon fontSize="default" />
+          </Button>
+        </div>
       )}
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary" component="h2">
           {post.tags.map((tag) => `#${tag} `)}
         </Typography>
       </div>
-      <Typography className={classes.title} variant="h5" gutterBottom>
+      <Typography className={classes.title} variant="h5" component="h2" gutterBottom>
         {post.title}
       </Typography>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          {post.message}
+        <Typography variant="body2" color="textSecondary" component="p">
+          {post.message.split(" ").splice(0, 20).join(" ")}...
         </Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
