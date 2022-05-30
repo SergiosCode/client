@@ -60,7 +60,7 @@ const Post = ({ post, setCurrentId }) => {
               e.stopPropagation();
               setCurrentId(post._id);
             }}>
-            <MoreHorizIcon fontSize="default" />
+            <MoreHorizIcon fontSize="medium" />
           </Button>
         </div>
       )}
