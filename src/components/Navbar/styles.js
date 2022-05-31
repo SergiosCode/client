@@ -3,6 +3,8 @@ import { deepPurple } from "@material-ui/core/colors";
 
 export default makeStyles((theme) => ({
   appBar: {
+    backgroundColor: "rgba(20, 20, 20, 0.5)",
+    border: "white 1px solid",
     borderRadius: 15,
     margin: "30px 0",
     display: "flex",
@@ -33,8 +35,8 @@ export default makeStyles((theme) => ({
     },
   },
   profile: {
+    color: "white",
     display: "flex",
-    justifyContent: "space-between",
     width: "400px",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
@@ -50,6 +52,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textAlign: "center",
+    marginLeft: "10px",
   },
   brandContainer: {
     display: "flex",

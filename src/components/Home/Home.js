@@ -60,8 +60,8 @@ function Home() {
             <AppBar className={classes.appBarSearch} position="static" color="inherit">
               <TextField
                 name="search"
-                variant="outlined"
                 label="Search Memories"
+                variant="outlined"
                 onKeyPress={handleKeyPress}
                 fullWidth
                 value={search}

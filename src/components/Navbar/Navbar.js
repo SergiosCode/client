@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { AppBar, Avatar, Button, Typography, Toolbar } from "@material-ui/core";
 import useStyles from "./styles";
 import decode from "jwt-decode";
-import memories from "../../images/memories.png";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import memoriesText from "../../images/memoriesText.png";
 import memoriesLogo from "../../images/memoriesLogo.png";
+import * as actionType from '../../constants/actionTypes';
 
 function Navbar() {
   const classes = useStyles();
@@ -18,8 +18,8 @@ function Navbar() {
   console.log(user);
 
   const logout = () => {
-    dispatch({ type: "LOGOUT" });
-    history.push("/");
+    dispatch({ type: actionType.LOGOUT });
+    history.push("/auth");
   };
 
   useEffect(() => {
@@ -44,10 +44,10 @@ function Navbar() {
         {user ? (
           <div className={classes.profile}>
             <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageURL}>
-              {user.result.name.charAt(0)}
+              {user.result.name.charAt(0).toUpperCase()}
             </Avatar>
             <Typography className={classes.username} variant="h6">
-              {user.result.name}
+              {user.result.name.split(" ").map(name => name.charAt(0).toUpperCase() + name.slice(1)).join(" ")}
             </Typography>
             <Button
               variant="contained"
