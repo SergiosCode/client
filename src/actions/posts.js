@@ -8,7 +8,7 @@ import {
   UPDATE,
   DELETE,
   LIKE,
-  // COMMENT,
+  COMMENT,
   // FETCH_BY_CREATOR,
 } from "../constants/actionTypes";
 import * as api from "../api/index.js";
@@ -102,17 +102,17 @@ export const likePost = (id) => async (dispatch) => {
   }
 };
 
-// export const commentPost = (value, id) => async (dispatch) => {
-//   try {
-//     const { data } = await api.comment(value, id);
+export const commentPost = (value, id) => async (dispatch) => {
+  try {
+    const { data } = await api.comment(value, id);
 
-//     dispatch({ type: COMMENT, payload: data });
+    dispatch({ type: COMMENT, payload: data });
 
-//     return data.comments;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+    return data.comments;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const deletePost = (id) => async (dispatch) => {
   try {
