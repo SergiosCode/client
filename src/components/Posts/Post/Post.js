@@ -39,7 +39,7 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   const Likes = () => {
-    if (likes.length > 0) {
+    if (post?.likes?.length > 0) {
       return likes.find((like) => like === userId) ? (
         <>
           <ThumbUpAltIcon fontSize="small" />
@@ -100,7 +100,6 @@ const Post = ({ post, setCurrentId }) => {
           {post.title.split("").length < 25
             ? post.title
             : post.title.split(" ").slice(0, 4).join(" ") + "..."}
-          {/* {post.title.split(" ").splice(0, 5).join(" ")}... */}
         </Typography>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
