@@ -52,7 +52,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    justifyContent: 'space-between',
+    padding: "0 10px",
   },
   brandContainer: {
     display: "flex",
