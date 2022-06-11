@@ -42,6 +42,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "auto",
       marginTop: 20,
+      marginLeft: "10px",
       justifyContent: "center",
     },
   },
