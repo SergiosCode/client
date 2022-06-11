@@ -104,7 +104,7 @@ function Auth() {
             className={classes.submit}>
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
-          <GoogleLogin
+          {/* <GoogleLogin
             clientId="532400421204-gs48oclm1d7h4l3h11nuf57p04917qjs.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button
@@ -121,7 +121,7 @@ function Auth() {
             onSuccess={googleSuccess}
             onFailure={googleFailure}
             cookiePolicy="single_host_origin"
-          />
+          /> */}
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Button onClick={switchMode}>
