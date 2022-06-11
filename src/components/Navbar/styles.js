@@ -42,7 +42,6 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "auto",
       marginTop: 20,
-      marginLeft: "10px",
       justifyContent: "center",
     },
   },
@@ -53,7 +52,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    marginLeft: "10px",
+    marginLeft: "30px",
   },
   brandContainer: {
     display: "flex",
