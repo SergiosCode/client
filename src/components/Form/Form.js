@@ -59,7 +59,7 @@ const Form = ({ currentId, setCurrentId }) => {
         className={`${classes.form} ${classes.root}`}
         onSubmit={handleSubmit}>
         <Typography className={classes.heading} variant="h6" align="center">
-          {currentId ? "Editing" : "Creating"} a Memory
+          {currentId ? "Editing" : "Creating"} a Blog
         </Typography>
         {/* <TextField
           name="creator"
