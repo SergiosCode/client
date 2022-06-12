@@ -47,7 +47,7 @@ export default makeStyles((theme) => ({
   userName: {
     display: "flex",
     alignItems: "center",
-    textAlign: "right",
+    textAlign: "center",
   },
   brandContainer: {
     display: "flex",

@@ -43,7 +43,7 @@ function Navbar() {
             <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageURL}>
               {user.result.name.charAt(0).toUpperCase()}
             </Avatar>
-            <Typography className={classes.username} variant="h6">
+            <Typography className={classes.userName} variant="h6">
               {user.result.name
                 .split(" ")
                 .map((name) => name.charAt(0).toUpperCase() + name.slice(1))
