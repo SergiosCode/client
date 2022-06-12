@@ -125,8 +125,8 @@ function Auth() {
             <Grid item>
               <Button onClick={switchMode}>
                 {isSignup
-                  ? `Already have an account? ${(<strong>Sign In</strong>)}`
-                  : `Don't have an account? ${(<strong>Sign Up</strong>)}`}
+                  ? `Already have an account?  <u>Sign In</u>`
+                  : `Don't have an account?  Sign Up`}
               </Button>
             </Grid>
           </Grid>
