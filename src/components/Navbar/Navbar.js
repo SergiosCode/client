@@ -5,6 +5,7 @@ import decode from "jwt-decode";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import memoriesText from "../../images/memoriesText.png";
+import BLOGSTER from "../../images/blogster.png";
 import memoriesLogo from "../../images/memoriesLogo.png";
 import * as actionType from "../../constants/actionTypes";
 
@@ -36,8 +37,7 @@ function Navbar() {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <Typography variant="h4">BLOGSTER</Typography>
-        <img className={classes.image} src={memoriesLogo} alt="logo" height="40px" />
+        <img className={classes.image} src={BLOGSTER} alt="logo" height="40px" />
       </Link>
       <Toolbar className={classes.toolbar}>
         {user ? (

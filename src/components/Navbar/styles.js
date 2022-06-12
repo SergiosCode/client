@@ -58,6 +58,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textDecoration: "none",
+    justifyContent: "center",
     color: "white",
   },
   purple: {
