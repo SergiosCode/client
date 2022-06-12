@@ -58,7 +58,7 @@ const PostDetails = () => {
           </Typography>
           <Typography variant="h6">
             Created by:
-            <h1 style={{ textDecoration: "none", color: "#3f51b5" }}>{` ${post.name}`}</h1>
+            <h1>{` ${post.name}`}</h1>
           </Typography>
           <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
           <Divider style={{ margin: "20px 0" }} />
