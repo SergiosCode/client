@@ -5,6 +5,7 @@ import decode from "jwt-decode";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import blogsterLogo from "../../images/blogster.png";
+import blogsterSVG from "../../images/blogster.svg";
 import * as actionType from "../../constants/actionTypes";
 
 function Navbar() {
@@ -35,7 +36,7 @@ function Navbar() {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <img src={blogsterLogo} alt="logo" />
+        <img src={blogsterSVG} alt="logo" />
       </Link>
       <Toolbar className={classes.toolbar}>
         {user ? (

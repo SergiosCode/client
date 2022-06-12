@@ -22,10 +22,6 @@ export default makeStyles((theme) => ({
     fontSize: "2em",
     fontWeight: 300,
   },
-  image: {
-    marginLeft: "10px",
-    marginTop: "5px",
-  },
   toolbar: {
     display: "flex",
     justifyContent: "flex-end",
@@ -57,9 +53,12 @@ export default makeStyles((theme) => ({
   brandContainer: {
     display: "flex",
     alignItems: "center",
-    textDecoration: "none",
     justifyContent: "center",
-    color: "white",
+    height: "80px",
+    width: "330px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "0 auto",
+    },
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
