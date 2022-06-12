@@ -124,7 +124,9 @@ function Auth() {
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Button onClick={switchMode}>
-                {isSignup ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
+                {isSignup
+                  ? `Already have an account? ${(<strong>Sign In</strong>)}`
+                  : `Don't have an account? ${(<strong>Sign Up</strong>)}`}
               </Button>
             </Grid>
           </Grid>
