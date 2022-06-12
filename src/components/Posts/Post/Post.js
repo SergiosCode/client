@@ -97,13 +97,13 @@ const Post = ({ post, setCurrentId }) => {
           </Typography>
         </div>
         <Typography className={classes.title} variant="h5" component="h2" gutterBottom>
-          {post.title.split("").length < 20
+          {post.title.split("").length < 18
             ? post.title
             : post.title.split(" ").slice(0, 4).join(" ") + "..."}
         </Typography>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {post.message.split(" ").splice(0, 30).join(" ")}...
+            {post.message.split(" ").splice(0, 25).join(" ")}...
           </Typography>
         </CardContent>
       </ButtonBase>
