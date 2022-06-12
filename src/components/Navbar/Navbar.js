@@ -36,7 +36,7 @@ function Navbar() {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <img src={memoriesText} alt="logo text" height="45px" />
+        <h1 className={classes.logo}>BLOGSTER</h1>
         <img className={classes.image} src={memoriesLogo} alt="logo" height="40px" />
       </Link>
       <Toolbar className={classes.toolbar}>
