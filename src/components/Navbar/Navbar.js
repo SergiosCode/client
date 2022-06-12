@@ -6,7 +6,7 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import memoriesText from "../../images/memoriesText.png";
 import memoriesLogo from "../../images/memoriesLogo.png";
-import * as actionType from '../../constants/actionTypes';
+import * as actionType from "../../constants/actionTypes";
 
 function Navbar() {
   const classes = useStyles();
@@ -36,7 +36,7 @@ function Navbar() {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <h1 className={classes.logo}>BLOGSTER</h1>
+        <Typography variant="h2">BLOGSTER</Typography>
         <img className={classes.image} src={memoriesLogo} alt="logo" height="40px" />
       </Link>
       <Toolbar className={classes.toolbar}>
@@ -46,7 +46,10 @@ function Navbar() {
               {user.result.name.charAt(0).toUpperCase()}
             </Avatar>
             <Typography className={classes.username} variant="h6">
-              {user.result.name.split(" ").map(name => name.charAt(0).toUpperCase() + name.slice(1)).join(" ")}
+              {user.result.name
+                .split(" ")
+                .map((name) => name.charAt(0).toUpperCase() + name.slice(1))
+                .join(" ")}
             </Typography>
             <Button
               variant="contained"

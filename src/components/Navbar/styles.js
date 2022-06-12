@@ -57,15 +57,10 @@ export default makeStyles((theme) => ({
   brandContainer: {
     display: "flex",
     alignItems: "center",
+    textDecoration: "none",
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
-  },
-  logo: {
-    width: "50px",
-    height: "50px",
-    marginRight: "10px",
-    textDecoration: "none",
   },
 }));
