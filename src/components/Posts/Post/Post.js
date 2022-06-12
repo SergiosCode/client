@@ -97,7 +97,7 @@ const Post = ({ post, setCurrentId }) => {
           </Typography>
         </div>
         <Typography className={classes.title} variant="h5" component="h2" gutterBottom>
-          {post.title.split("").length < 25
+          {post.title.split("").length < 20
             ? post.title
             : post.title.split(" ").slice(0, 4).join(" ") + "..."}
         </Typography>
