@@ -54,11 +54,6 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "80px",
-    width: "330px",
-    [theme.breakpoints.down("sm")]: {
-      margin: "0 auto",
-    },
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
